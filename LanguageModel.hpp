@@ -12,17 +12,23 @@
 
 class LanguageModel {
  public:
+  static float _delta;
+
   std::string _textPath;
   std::vector<int> _charAppearance;
-  float _bias;
-  size_t _count;
+  std::vector<float> _smoothedFrequencies;
+  size_t _total;
+  size_t _matrixSize;
 
  public:
-  explicit LanguageModel(std::string const &textPath, float bias = 0.5);
+  explicit LanguageModel(std::string const &textPath);
   int buildModel();
+
+  void getSmoothedFrequencies();
 
  private:
   void populateCharCount(std::ifstream &file);
+  float getSmoothedFrequency(int a);
 };
 
 #endif //COMP472_MINIPROJECT3_LANGUAGEMODEL_HPP
