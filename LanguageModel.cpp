@@ -5,14 +5,20 @@
 #include <cerrno>
 #include <sstream>
 #include <iostream>
+#include <iostream>
+#include <fstream>
 #include <functional>
 #include <algorithm>
+#include "utils.hpp"
 #include "LanguageModel.hpp"
 
 float LanguageModel::_delta = 0.5;
 
-LanguageModel::LanguageModel(std::string const &textPath)
-    : _textPath(textPath), _charAppearance(26, 1), _total(0) {}
+LanguageModel::LanguageModel(std::string const &textPath, std::string const &dumpPath)
+    : _textPath(textPath), 
+    _dumpPath(dumpPath),
+    _charAppearance(26, 1), 
+    _total(0) {}
 
 int LanguageModel::buildModel() {
   std::ifstream text(_textPath);
@@ -37,16 +43,44 @@ void LanguageModel::populateCharCount(std::ifstream &file) {
 
 void LanguageModel::getSmoothedFrequencies() {
   _smoothedFrequencies.resize(_charAppearance.size());
-  _matrixSize = _charAppearance.size();
+
+  std::function<float (int)> getSmoothedfrequency = std::bind(
+    [](int a, float delta, float total, int matrixSize) {
+      float freq = static_cast<float>(a);
+      return (freq + delta) / (total + delta * matrixSize);
+    }, std::placeholders::_1, _delta, _total, _charAppearance.size()
+  );
 
   std::transform(_charAppearance.begin(), 
     _charAppearance.end(), 
     _smoothedFrequencies.begin(),
-    std::bind(&LanguageModel::getSmoothedFrequency, this, std::placeholders::_1));
+    getSmoothedfrequency);
+    
+  dumpSmoothedFrequencies();
 }
 
-float LanguageModel::getSmoothedFrequency(int a) {
-  float freq = static_cast<float>(a);
+int LanguageModel::dumpSmoothedFrequencies()
+{
+  std::ofstream output(_dumpPath);
+  if (!output.is_open()) {
+    std::cerr << "Couldn't open dump file " << _dumpPath << std::endl;
+    return EXIT_FAILURE;
+  }
 
-  return (freq + _delta) / (_total + _delta * _matrixSize);
+  char idx = 'a';
+  std::function<void (float)> dumpSmoothedFrequency = std::bind(
+    [&idx](float item, std::ofstream& of) {
+      of << "P(" << idx << ") = " << item << std::endl;
+      ++idx;
+    }, std::placeholders::_1, std::ref(output)
+  );
+
+  std::for_each(_smoothedFrequencies.begin(), 
+    _smoothedFrequencies.end(),
+    dumpSmoothedFrequency
+  );
+
+  output.close();
+  return EXIT_SUCCESS;
 }
+

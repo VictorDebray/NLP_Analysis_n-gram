@@ -18,17 +18,19 @@ class LanguageModel {
   std::vector<int> _charAppearance;
   std::vector<float> _smoothedFrequencies;
   size_t _total;
-  size_t _matrixSize;
+
+  std::string _dumpPath;
 
  public:
-  explicit LanguageModel(std::string const &textPath);
+  explicit LanguageModel(std::string const &textPath, std:: string const &dumpPath);
   int buildModel();
 
   void getSmoothedFrequencies();
 
  private:
   void populateCharCount(std::ifstream &file);
-  float getSmoothedFrequency(int a);
+
+  int dumpSmoothedFrequencies();
 };
 
 #endif //COMP472_MINIPROJECT3_LANGUAGEMODEL_HPP
