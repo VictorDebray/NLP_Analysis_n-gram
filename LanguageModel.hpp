@@ -8,21 +8,23 @@
 # include <string>
 # include <fstream>
 # include <vector>
-# include <unordered_map>
+# include "UniGram.hpp"
+# include "BiGram.hpp"
 
 class LanguageModel {
  public:
+  UniGram _unigram;
+  BiGram _bigram;
   std::string _textPath;
-  std::vector<int> _charAppearance;
+  std::string _text;
   float _bias;
-  size_t _count;
 
  public:
   explicit LanguageModel(std::string const &textPath, float bias = 0.5);
   int buildModel();
 
  private:
-  void populateCharCount(std::ifstream &file);
+  int getFileContents(std::string const &file);
 };
 
 #endif //COMP472_MINIPROJECT3_LANGUAGEMODEL_HPP

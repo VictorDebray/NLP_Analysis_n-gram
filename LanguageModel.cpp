@@ -8,25 +8,22 @@
 #include "LanguageModel.hpp"
 
 LanguageModel::LanguageModel(std::string const &textPath, float bias)
-    : _textPath(textPath), _charAppearance(26, 1), _bias(bias), _count(0) {}
+    : _textPath(textPath), _bias(bias) {}
 
-int LanguageModel::buildModel() {
-  std::ifstream text(_textPath);
-  if (!text.is_open())
-    return EXIT_FAILURE;
-  populateCharCount(text);
-  return 0;
+int LanguageModel::getFileContents(std::string const &filename) {
+  std::FILE *fp = std::fopen(filename.c_str(), "rb");
+  if (fp) {
+    std::fseek(fp, 0, SEEK_END);
+    _text.resize(std::ftell(fp));
+    std::rewind(fp);
+    std::fread(&_text[0], 1, _text.size(), fp);
+    std::fclose(fp);
+  }
+  return EXIT_FAILURE;
 }
 
-void LanguageModel::populateCharCount(std::ifstream &file) {
-  std::string chunk;
-  while (std::getline(file, chunk)) {
-    for (char c : chunk) {
-      if (std::isalpha(c)) {
-        int idx = std::toupper(c) - 'A';
-        _charAppearance[idx] += 1;
-        _count += 1;
-      }
-    }
-  }
+int LanguageModel::buildModel() {
+  if (getFileContents(_textPath))
+    return EXIT_FAILURE;
+  return 0;
 }
