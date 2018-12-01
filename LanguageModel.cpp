@@ -4,40 +4,29 @@
 
 #include <cerrno>
 #include <sstream>
+#include <iostream>
 #include "LanguageModel.hpp"
-#include "MyException.hpp"
 
-LanguageModel::LanguageModel(std::string const &textPath, float bias) noexcept(false)
-: _textPath(textPath), _bias(bias)  {
-  try {
-    _text = getFileContents(textPath);
-  } catch (...) {
-    throw MyException("Could not get file content");
-  }
+LanguageModel::LanguageModel(std::string const &textPath, float bias)
+    : _textPath(textPath), _charAppearance(26, 1), _bias(bias), _count(0) {}
+
+int LanguageModel::buildModel() {
+  std::ifstream text(_textPath);
+  if (!text.is_open())
+    return EXIT_FAILURE;
+  populateCharCount(text);
+  return 0;
 }
 
-std::string LanguageModel::getFileContents(std::string const &filename) {
-  std::FILE *fp = std::fopen(filename.c_str(), "rb");
-  if (fp) {
-    std::string contents;
-    std::fseek(fp, 0, SEEK_END);
-    contents.resize(std::ftell(fp));
-    std::rewind(fp);
-    std::fread(&contents[0], 1, contents.size(), fp);
-    std::fclose(fp);
-    return (contents);
-  }
-  throw (errno);
-}
-
-void LanguageModel::buildModel(std::string const &text) {
-  std::stringstream sstream(_text);
-  std::string word;
-
-  while (sstream >> word) {
-    auto it = _model.find(word);
-    if (it == _model.end()) {
-      _model[word] = _bias;
+void LanguageModel::populateCharCount(std::ifstream &file) {
+  std::string chunk;
+  while (std::getline(file, chunk)) {
+    for (char c : chunk) {
+      if (std::isalpha(c)) {
+        int idx = std::toupper(c) - 'A';
+        _charAppearance[idx] += 1;
+        _count += 1;
+      }
     }
   }
 }

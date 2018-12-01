@@ -6,21 +6,23 @@
 # define COMP472_MINIPROJECT3_LANGUAGEMODEL_HPP
 
 # include <string>
+# include <fstream>
+# include <vector>
 # include <unordered_map>
 
 class LanguageModel {
  public:
-  std::unordered_map<std::string, float> _model;
   std::string _textPath;
-  std::string _text;
+  std::vector<int> _charAppearance;
   float _bias;
+  size_t _count;
 
  public:
-  LanguageModel(std::string const &textPath, float bias) noexcept(false);
+  explicit LanguageModel(std::string const &textPath, float bias = 0.5);
+  int buildModel();
 
  private:
-  std::string getFileContents(std::string const &filename);
-  void buildModel(std::string const &text);
+  void populateCharCount(std::ifstream &file);
 };
 
 #endif //COMP472_MINIPROJECT3_LANGUAGEMODEL_HPP
