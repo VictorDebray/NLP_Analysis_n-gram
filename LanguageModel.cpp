@@ -37,7 +37,7 @@ void LanguageModel::buildModel(std::string const &text) {
   while (sstream >> word) {
     auto it = _model.find(word);
     if (it == _model.end()) {
-      _model[word] = bias;
+      _model[word] = _bias;
     }
   }
 }

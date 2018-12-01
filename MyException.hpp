@@ -5,7 +5,8 @@
 #ifndef COMP472_MINIPROJECT3_MYEXCEPTION_HPP
 # define COMP472_MINIPROJECT3_MYEXCEPTION_HPP
 
-# include <exception>
+#include <exception>
+#include <stdexcept>
 #include <string>
 
 class MyException : std::exception {
