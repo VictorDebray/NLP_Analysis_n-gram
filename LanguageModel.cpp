@@ -14,13 +14,11 @@
 float LanguageModel::_delta = 0.5;
 
 LanguageModel::LanguageModel(std::string const &textPath, 
-  std::string const &dumpPath,
-  std::string const &language) : 
+  std::string const &dumpPath) : 
     _textPath(textPath), 
     _dumpPath(dumpPath),
     _charAppearance(26, 1), 
-    _total(0),
-    _language(language) {}
+    _total(0) {}
 
 LanguageModel::LanguageModel(std::string const &sentence) :
     _charAppearance(26, 1), 

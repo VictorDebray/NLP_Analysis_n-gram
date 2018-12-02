@@ -12,8 +12,6 @@
 
 class LanguageModel {
  public:
-  std::string _language;
-
   static float _delta;
 
   std::string _textPath;
@@ -28,8 +26,7 @@ class LanguageModel {
  public:
   /* Overload for multi-line files */
   explicit LanguageModel(std::string const &textPath, 
-    std::string const &dumpPath,
-    std::string const &language);
+    std::string const &dumpPath);
 
   /* Overload for single-line sentences */
   explicit LanguageModel(std::string const &sentence);
