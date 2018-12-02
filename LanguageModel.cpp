@@ -22,30 +22,36 @@ LanguageModel::LanguageModel(std::string const &textPath,
     _total(0),
     _language(language) {}
 
+LanguageModel::LanguageModel(std::string const &sentence) :
+    _charAppearance(26, 1), 
+    _total(0),
+    _sentence(sentence) {}
+
 int LanguageModel::buildModel() {
   std::ifstream text(_textPath);
   if (!text.is_open())
     return EXIT_FAILURE;
-  populateCharCount(text);
-
+  
+  std::string chunk;
+  while (std::getline(text, _sentence)) {
+    populateCharCount();
+  }
+  
   text.close();
   return EXIT_SUCCESS;
 }
 
-void LanguageModel::populateCharCount(std::ifstream &file) {
-  std::string chunk;
-  while (std::getline(file, chunk)) {
-    for (char c : chunk) {
-      if (std::isalpha(c)) {
-        int idx = std::toupper(c) - 'A';
-        _charAppearance[idx] += 1;
-        _total += 1;
-      }
+void LanguageModel::populateCharCount() {
+  for (char c : _sentence) {
+    if (std::isalpha(c)) {
+      int idx = std::toupper(c) - 'A';
+      _charAppearance[idx] += 1;
+      _total += 1;
     }
   }
 }
 
-void LanguageModel::getSmoothedFrequencies() {
+void LanguageModel::getSmoothedFrequencies(bool dump) {
   _smoothedFrequencies.resize(_charAppearance.size());
 
   std::function<float (int)> getSmoothedfrequency = std::bind(
@@ -60,7 +66,9 @@ void LanguageModel::getSmoothedFrequencies() {
     _smoothedFrequencies.begin(),
     getSmoothedfrequency);
     
-  dumpSmoothedFrequencies();
+  if (dump) {
+    dumpSmoothedFrequencies();
+  }
 }
 
 int LanguageModel::dumpSmoothedFrequencies()

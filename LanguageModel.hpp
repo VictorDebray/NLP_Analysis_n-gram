@@ -23,18 +23,25 @@ class LanguageModel {
 
   std::string _dumpPath;
 
- public:
-  explicit LanguageModel(std::string const &textPath, 
-    std:: string const &dumpPath,
-    std::string const &language);
-  int buildModel();
+  std::string _sentence;
 
-  void getSmoothedFrequencies();
+ public:
+  /* Overload for multi-line files */
+  explicit LanguageModel(std::string const &textPath, 
+    std::string const &dumpPath,
+    std::string const &language);
+
+  /* Overload for single-line sentences */
+  explicit LanguageModel(std::string const &sentence);
+
+  int buildModel();
+  void populateCharCount();
+
+  void getSmoothedFrequencies(bool dump);
 
  private:
-  void populateCharCount(std::ifstream &file);
-
   int dumpSmoothedFrequencies();
+
 };
 
 #endif //COMP472_MINIPROJECT3_LANGUAGEMODEL_HPP

@@ -41,9 +41,9 @@ int main(int ac, char **av) {
     std::cerr << "Cant open file";
   std::cout << "Model parsed" << std::endl;
 
-  lm1.getSmoothedFrequencies();
-  lm2.getSmoothedFrequencies();
-  lm3.getSmoothedFrequencies();
+  lm1.getSmoothedFrequencies(true);
+  lm2.getSmoothedFrequencies(true);
+  lm3.getSmoothedFrequencies(true);
 
   std::string inputFile(av[4]);
   
