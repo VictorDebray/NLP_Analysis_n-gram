@@ -2,10 +2,12 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
+#include "utils.hpp"
 #include "LanguageModel.hpp"
 #include "SentenceClassifier.hpp"
 
-int classifySentences(std::string const &file, std::vector<LanguageModel>& lm) {
+int classifySentences(std::string const &file, LMMap& lms) {
   std::ifstream text(file);
   if (!text.is_open()) {
     std::cerr << "Can't open file " << file << std::endl;
@@ -13,8 +15,12 @@ int classifySentences(std::string const &file, std::vector<LanguageModel>& lm) {
   }
 
   std::string chunk;
+  auto idx = 1;
   while (std::getline(text, chunk)) {
-    SentenceClassifier sc(chunk, lm);
+    auto humanReadableSentence = chunk;
+    chunk.erase(remove_if(chunk.begin(), chunk.end(), 
+      [](char c) { return !isalpha(c); } ), chunk.end());
+    SentenceClassifier sc(idx++, chunk, humanReadableSentence, lms);
     sc.process();
   }
 
@@ -47,6 +53,10 @@ int main(int ac, char **av) {
 
   std::string inputFile(av[4]);
   
-  std::vector<LanguageModel> lms = { lm1, lm2, lm3 };
+  std::map<std::string, LanguageModel> lms = { 
+    { "english", lm1 }, 
+    { "french", lm2, },
+    { "other", lm3 },
+  };
   return classifySentences(inputFile, lms);
 }

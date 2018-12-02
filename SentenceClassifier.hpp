@@ -3,20 +3,33 @@
 
 # include <string>
 # include <vector>
-# include "LanguageModel.hpp"
+# include "utils.hpp"
+
+using PMap = std::map<std::string, float>;
 
 class SentenceClassifier {
 
 private:
     std::string _sentence;
-    std::vector<LanguageModel> _languageModels;
+    std::string _humanReadableSentence;
+    LMMap _languageModels;
     LanguageModel _sentenceLm;
 
-public:
-    explicit SentenceClassifier(std::string const &sentence,
-        std::vector<LanguageModel>& languageModels);
+    std::map<std::string, float> _logProbs;
+    using PMapItemType = decltype(_logProbs)::value_type;
 
-    void process();
+    int _idx;
+
+public:
+    explicit SentenceClassifier(int idx, 
+        std::string const &sentence,
+        std::string const &humanReadableSentence,
+        LMMap& languageModels);
+
+    int process();
+
+private:
+    void dumpUnigram(char c, std::string const &language, std::ofstream &output);
 };
 
 #endif
