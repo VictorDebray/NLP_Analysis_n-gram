@@ -6,7 +6,7 @@
 
 UniGram::UniGram() : _charAppearance(26, 1), _count(0) {}
 
-void UniGram::populateCharCount(std::string const &text) {
+void UniGram::buildGram(std::string const &text) {
   size_t len = text.size();
   size_t idx = 0;
   while (idx < len) {

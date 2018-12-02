@@ -17,12 +17,12 @@ class BiGram {
   size_t _count;
 
  private:
-  void populateCharCount(std::string const &text);
   void countChar(char histChar, char currentChar);
+  std::string epurStr(std::string const &str);
 
  public:
   BiGram();
-  int buildGram(std::ifstream &ifs);
+  void buildGram(std::string const &text);
 };
 
 #endif //COMP472_MINIPROJECT3_BIGRAM_HPP

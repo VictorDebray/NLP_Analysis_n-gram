@@ -2,6 +2,7 @@
 // Created by Victor Debray on 2018-12-01.
 //
 
+#include <sstream>
 #include "BiGram.hpp"
 
 const int BiGram::ALONE_IDX = 26;
@@ -12,7 +13,7 @@ const int BiGram::ALONE_IDX = 26;
 BiGram::BiGram() : _biCharAppearance(26, std::vector<int>(27, 1)), _count(0) {}
 
 void BiGram::countChar(char histChar, char currentChar) {
-  if (histChar == -1) {
+  if (histChar == -1 && std::isalpha(currentChar)) {
     int firstIdx = std::toupper(currentChar) - 'A';
     _biCharAppearance[firstIdx][BiGram::ALONE_IDX] += 1;
     _count += 1;
@@ -24,15 +25,35 @@ void BiGram::countChar(char histChar, char currentChar) {
   }
 }
 
-void BiGram::populateCharCount(std::string const &text) {
-  size_t len = text.size();
-  size_t idx = 0;
-  while (idx < len) {
-    if (idx == 0)
-      countChar(-1, text[idx]);
-    char histChar = text[idx - 1];
-    char currentChar = text[idx];
-    countChar(histChar, currentChar);
-    ++idx;
+std::string BiGram::epurStr(std::string const &str) {
+  std::string epured;
+
+  epured.reserve(str.size());
+  for (char i : str) {
+    if (std::isalpha(i))
+      epured += i;
+  }
+  return epured;
+}
+
+void BiGram::buildGram(std::string const &text) {
+  std::vector<std::string> tokens;
+  std::string token;
+  std::istringstream tokenStream(text);
+  while (tokenStream >> token) {
+    tokens.push_back(token);
+  }
+  for (auto &it: tokens) {
+    std::string word = epurStr(it);
+    size_t len = word.size();
+    for (size_t i = 0; i < len; i++) {
+      if (i == 0)
+        countChar(-1, word[i]);
+      else {
+        char histChar = word[i - 1];
+        char currentChar = word[i];
+        countChar(histChar, currentChar);
+      }
+    }
   }
 }

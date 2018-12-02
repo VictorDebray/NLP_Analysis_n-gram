@@ -25,6 +25,7 @@ class LanguageModel {
 
  private:
   int getFileContents(std::string const &file);
+
 };
 
 #endif //COMP472_MINIPROJECT3_LANGUAGEMODEL_HPP

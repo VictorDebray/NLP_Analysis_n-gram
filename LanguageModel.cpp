@@ -18,12 +18,15 @@ int LanguageModel::getFileContents(std::string const &filename) {
     std::rewind(fp);
     std::fread(&_text[0], 1, _text.size(), fp);
     std::fclose(fp);
-  }
-  return EXIT_FAILURE;
+  } else
+    return EXIT_FAILURE;
+  return 0;
 }
 
 int LanguageModel::buildModel() {
   if (getFileContents(_textPath))
     return EXIT_FAILURE;
+  _unigram.buildGram(_text);
+  _bigram.buildGram(_text);
   return 0;
 }

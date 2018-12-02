@@ -14,12 +14,9 @@ class UniGram {
   std::vector<int> _charAppearance;
   size_t _count;
 
- private:
-  void populateCharCount(std::string const &text);
-
-
  public:
   UniGram();
+  void buildGram(std::string const &text);
 };
 
 #endif //COMP472_MINIPROJECT3_UNIGRAM_HPP
