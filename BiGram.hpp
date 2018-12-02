@@ -14,6 +14,7 @@ class BiGram {
   static const int ALONE_IDX;
  private:
   std::vector<std::vector<int>> _biCharAppearance;
+  std::vector<std::vector<float>> _smoothedFrequencies;
   size_t _count;
 
  private:
@@ -23,6 +24,7 @@ class BiGram {
  public:
   BiGram();
   void buildGram(std::string const &text);
+  void computeSmoothedFrequency(float delta);
 };
 
 #endif //COMP472_MINIPROJECT3_BIGRAM_HPP

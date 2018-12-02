@@ -22,4 +22,17 @@ int main(int ac, char **av) {
   if (lm3.buildModel())
     std::cerr << "Cant open file";
   std::cout << "Model parsed" << std::endl;
+
+  lm1.computeFrequencies();
+  lm2.computeFrequencies();
+  lm3.computeFrequencies();
+
+  std::string inputFile(av[4]);
+  
+  std::map<std::string, LanguageModel> lms = { 
+    { "english", lm1 }, 
+    { "french", lm2, },
+    { "other", lm3 },
+  };
+  return classifySentences(inputFile, lms);
 }

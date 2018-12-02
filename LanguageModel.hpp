@@ -17,11 +17,22 @@ class LanguageModel {
   BiGram _bigram;
   std::string _textPath;
   std::string _text;
-  float _bias;
+  float _delta;
+  std::string _dumpPath;
+  std::string _sentence;
 
  public:
-  explicit LanguageModel(std::string const &textPath, float bias = 0.5);
+  /* Overload for multi-line files */
+  LanguageModel(std::string const &textPath,
+    std::string const &dumpPath, float delta = 0.5);
+
+  /* Overload for single-line sentences */
+  explicit LanguageModel(std::string const &sentence);
+
   int buildModel();
+  int computeFrequencies();
+  UniGram const& getUnigram() const;
+  BiGram const& getBigram() const;
 
  private:
   int getFileContents(std::string const &file);

@@ -10,7 +10,11 @@ const int BiGram::ALONE_IDX = 26;
 // first dimension previous letter
 // second dimension current letter
 // 26 letter + 1 (for letter alone) = 27
-BiGram::BiGram() : _biCharAppearance(26, std::vector<int>(27, 1)), _count(0) {}
+BiGram::BiGram() :
+    _biCharAppearance(26, std::vector<int>(27, 1)),
+    _smoothedFrequencies(26, std::vector<float>(27, 1.0)),
+    _count(0) {
+}
 
 void BiGram::countChar(char histChar, char currentChar) {
   if (histChar == -1 && std::isalpha(currentChar)) {
@@ -56,4 +60,8 @@ void BiGram::buildGram(std::string const &text) {
       }
     }
   }
+}
+
+void BiGram::computeSmoothedFrequency(float delta) {
+
 }

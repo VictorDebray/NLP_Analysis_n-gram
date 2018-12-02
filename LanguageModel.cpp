@@ -7,8 +7,13 @@
 #include <iostream>
 #include "LanguageModel.hpp"
 
-LanguageModel::LanguageModel(std::string const &textPath, float bias)
-    : _textPath(textPath), _bias(bias) {}
+LanguageModel::LanguageModel(std::string const &textPath, std::string const &dumpPath, float delta) :
+    _textPath(textPath),
+    _dumpPath(dumpPath),
+    _delta(delta) {}
+
+
+LanguageModel::LanguageModel(std::string const &sentence) : _sentence(sentence) {}
 
 int LanguageModel::getFileContents(std::string const &filename) {
   std::FILE *fp = std::fopen(filename.c_str(), "rb");
@@ -29,4 +34,18 @@ int LanguageModel::buildModel() {
   _unigram.buildGram(_text);
   _bigram.buildGram(_text);
   return 0;
+}
+
+int LanguageModel::computeFrequencies() {
+  _unigram.computeSmoothedFrequencies(_delta);
+//  _bigram.computeSmoothedFrequencies(_delta, _dumpPath);
+  return 0;
+}
+
+UniGram const& LanguageModel::getUnigram() const {
+  return _unigram;
+}
+
+BiGram const& LanguageModel::getBigram() const {
+  return _bigram;
 }
