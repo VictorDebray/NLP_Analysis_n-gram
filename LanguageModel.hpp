@@ -21,6 +21,10 @@ class LanguageModel {
   std::string _dumpPath;
   std::string _sentence;
 
+  std::string _dumpPath;
+
+  std::string _sentence;
+
  public:
   /* Overload for multi-line files */
   LanguageModel(std::string const &textPath,
@@ -33,6 +37,8 @@ class LanguageModel {
   int computeFrequencies();
   UniGram const& getUnigram() const;
   BiGram const& getBigram() const;
+
+  void getSmoothedFrequencies(bool dump);
 
  private:
   int getFileContents(std::string const &file);

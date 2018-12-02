@@ -5,6 +5,10 @@
 #include <cerrno>
 #include <sstream>
 #include <iostream>
+#include <fstream>
+#include <functional>
+#include <algorithm>
+#include "utils.hpp"
 #include "LanguageModel.hpp"
 
 LanguageModel::LanguageModel(std::string const &textPath, std::string const &dumpPath, float delta) :
