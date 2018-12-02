@@ -8,4 +8,6 @@ add_executable(COMP472_miniproject3
     main.cpp 
     LanguageModel.cpp 
     LanguageModel.hpp
+    SentenceClassifier.cpp
+    SentenceClassifier.hpp 
     utils.cpp)

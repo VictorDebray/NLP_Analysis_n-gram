@@ -5,7 +5,6 @@
 #include <cerrno>
 #include <sstream>
 #include <iostream>
-#include <iostream>
 #include <fstream>
 #include <functional>
 #include <algorithm>
@@ -14,18 +13,23 @@
 
 float LanguageModel::_delta = 0.5;
 
-LanguageModel::LanguageModel(std::string const &textPath, std::string const &dumpPath)
-    : _textPath(textPath), 
+LanguageModel::LanguageModel(std::string const &textPath, 
+  std::string const &dumpPath,
+  std::string const &language) : 
+    _textPath(textPath), 
     _dumpPath(dumpPath),
     _charAppearance(26, 1), 
-    _total(0) {}
+    _total(0),
+    _language(language) {}
 
 int LanguageModel::buildModel() {
   std::ifstream text(_textPath);
   if (!text.is_open())
     return EXIT_FAILURE;
   populateCharCount(text);
-  return 0;
+
+  text.close();
+  return EXIT_SUCCESS;
 }
 
 void LanguageModel::populateCharCount(std::ifstream &file) {

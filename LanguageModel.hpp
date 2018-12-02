@@ -12,6 +12,8 @@
 
 class LanguageModel {
  public:
+  std::string _language;
+
   static float _delta;
 
   std::string _textPath;
@@ -22,7 +24,9 @@ class LanguageModel {
   std::string _dumpPath;
 
  public:
-  explicit LanguageModel(std::string const &textPath, std:: string const &dumpPath);
+  explicit LanguageModel(std::string const &textPath, 
+    std:: string const &dumpPath,
+    std::string const &language);
   int buildModel();
 
   void getSmoothedFrequencies();
