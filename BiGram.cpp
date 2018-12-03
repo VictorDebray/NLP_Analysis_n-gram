@@ -2,7 +2,9 @@
 // Created by Victor Debray on 2018-12-01.
 //
 
+#include <functional>
 #include <sstream>
+#include <algorithm>
 #include "BiGram.hpp"
 
 const int BiGram::ALONE_IDX = 26;

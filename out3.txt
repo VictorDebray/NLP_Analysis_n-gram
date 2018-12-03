@@ -1,0 +1,40 @@
+I'm OK.
+UNIGRAM MODEL
+UNIGRAM: I
+FRENCH: P(I) = 0.0813293==> log prob of sentence so far: -2.50925
+ENGLISH: P(I) = 0.0766115==> log prob of sentence so far: -2.56901
+OTHER: P(I) = 0.0687359==> log prob of sentence so far: -2.67748
+UNIGRAM: m
+FRENCH: P(m) = 0.0355046==> log prob of sentence so far: -5.84734
+ENGLISH: P(m) = 0.0300758==> log prob of sentence so far: -6.07304
+OTHER: P(m) = 0.0244526==> log prob of sentence so far: -6.3885
+UNIGRAM: O
+FRENCH: P(O) = 0.0586063==> log prob of sentence so far: -8.68425
+ENGLISH: P(O) = 0.0714409==> log prob of sentence so far: -8.71193
+OTHER: P(O) = 0.0728242==> log prob of sentence so far: -9.00821
+UNIGRAM: K
+FRENCH: P(K) = 0.000284037==> log prob of sentence so far: -16.8507
+ENGLISH: P(K) = 0.00749741==> log prob of sentence so far: -13.6051
+OTHER: P(K) = 0.00846705==> log prob of sentence so far: -13.7798
+
+According to the unigram model, the sentence is in english
+--------------------
+BIGRAM MODEL
+BIGRAM: <s>I
+FRENCH: P(I|<s>) = 0.0040712==> log prob of sentence so far: -22.3545
+ENGLISH: P(I|<s>) = 0.0276629==> log prob of sentence so far: -17.1928
+OTHER: P(I|<s>) = 0.0152392==> log prob of sentence so far: -17.9637
+BIGRAM: Im
+FRENCH: P(m|I) = 0.00160954==> log prob of sentence so far: -28.7863
+ENGLISH: P(m|I) = 0.00318856==> log prob of sentence so far: -22.941
+OTHER: P(m|I) = 0.00297537==> log prob of sentence so far: -23.7811
+BIGRAM: mO
+FRENCH: P(O|m) = 0.0106987==> log prob of sentence so far: -33.3239
+ENGLISH: P(O|m) = 0.00163737==> log prob of sentence so far: -29.3556
+OTHER: P(O|m) = 0.00306885==> log prob of sentence so far: -29.5675
+BIGRAM: OK
+FRENCH: P(K|O) = 0.000284037==> log prob of sentence so far: -41.4903
+ENGLISH: P(K|O) = 0.00232678==> log prob of sentence so far: -35.4189
+OTHER: P(K|O) = 0.000952222==> log prob of sentence so far: -36.5242
+
+According to the bigram model, the sentence is in english

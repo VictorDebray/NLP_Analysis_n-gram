@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include <functional>
+#include <algorithm>
 #include "UniGram.hpp"
 
 UniGram::UniGram() :
