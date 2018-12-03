@@ -65,11 +65,12 @@ void BiGram::buildGram(std::string const &text) {
 }
 
 void BiGram::computeSmoothedFrequencies(float delta) {
+  int matrixSize = _biCharAppearance.size() * (_biCharAppearance.size() + 1);
   std::function<float(int)> getSmoothedfrequency = std::bind(
       [](int a, float delta, float total, int matrixSize) {
         float freq = static_cast<float>(a);
         return (freq + delta) / (total + delta * matrixSize);
-      }, std::placeholders::_1, delta, _count, _biCharAppearance.size()
+      }, std::placeholders::_1, delta, _count, matrixSize
   );
 
   for (int i = 0; i < _biCharAppearance.size(); i++) {
