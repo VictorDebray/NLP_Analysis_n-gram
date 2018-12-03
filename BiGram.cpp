@@ -62,6 +62,28 @@ void BiGram::buildGram(std::string const &text) {
   }
 }
 
-void BiGram::computeSmoothedFrequency(float delta) {
+void BiGram::computeSmoothedFrequencies(float delta) {
+  std::function<float(int)> getSmoothedfrequency = std::bind(
+      [](int a, float delta, float total, int matrixSize) {
+        float freq = static_cast<float>(a);
+        return (freq + delta) / (total + delta * matrixSize);
+      }, std::placeholders::_1, delta, _count, _biCharAppearance.size()
+  );
 
+  for (int i = 0; i < _biCharAppearance.size(); i++) {
+    std::transform(_biCharAppearance[i].begin(),
+                   _biCharAppearance[i].end(),
+                   _smoothedFrequencies[i].begin(),
+                   getSmoothedfrequency);
+  }
+}
+
+float BiGram::getFrequency(char histChar, char currChar) const {
+  int currCharIdx = std::toupper(currChar) - 'A';
+  int histCharIdx = 0;
+  if (histChar == -1)
+    histCharIdx = BiGram::ALONE_IDX;
+  else
+    histCharIdx = std::toupper(histChar) - 'A';
+  return _smoothedFrequencies.at(currCharIdx).at(histCharIdx);
 }

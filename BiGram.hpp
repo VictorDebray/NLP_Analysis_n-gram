@@ -24,7 +24,8 @@ class BiGram {
  public:
   BiGram();
   void buildGram(std::string const &text);
-  void computeSmoothedFrequency(float delta);
+  void computeSmoothedFrequencies(float delta);
+  float getFrequency(char histChar, char currChar) const;
 };
 
 #endif //COMP472_MINIPROJECT3_BIGRAM_HPP

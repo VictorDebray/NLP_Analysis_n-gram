@@ -42,7 +42,7 @@ int LanguageModel::buildModel() {
 
 int LanguageModel::computeFrequencies() {
   _unigram.computeSmoothedFrequencies(_delta);
-//  _bigram.computeSmoothedFrequencies(_delta, _dumpPath);
+  _bigram.computeSmoothedFrequencies(_delta);
   return 0;
 }
 
