@@ -8,36 +8,36 @@
 # include <string>
 # include <fstream>
 # include <vector>
-# include <unordered_map>
+# include "UniGram.hpp"
+# include "BiGram.hpp"
 
 class LanguageModel {
  public:
-  static float _delta;
-
+  UniGram _unigram;
+  BiGram _bigram;
   std::string _textPath;
-  std::vector<int> _charAppearance;
-  std::vector<float> _smoothedFrequencies;
-  size_t _total;
-
+  std::string _text;
+  float _delta;
   std::string _dumpPath;
-
   std::string _sentence;
 
  public:
   /* Overload for multi-line files */
-  explicit LanguageModel(std::string const &textPath, 
-    std::string const &dumpPath);
+  LanguageModel(std::string const &textPath,
+    std::string const &dumpPath, float delta = 0.5);
 
   /* Overload for single-line sentences */
   explicit LanguageModel(std::string const &sentence);
 
   int buildModel();
-  void populateCharCount();
+  int computeFrequencies();
+  UniGram const& getUnigram() const;
+  BiGram const& getBigram() const;
 
   void getSmoothedFrequencies(bool dump);
 
  private:
-  int dumpSmoothedFrequencies();
+  int getFileContents(std::string const &file);
 
 };
 

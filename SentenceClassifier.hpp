@@ -9,27 +9,30 @@ using PMap = std::map<std::string, float>;
 
 class SentenceClassifier {
 
-private:
-    std::string _sentence;
-    std::string _humanReadableSentence;
-    LMMap _languageModels;
-    LanguageModel _sentenceLm;
+ private:
+  std::string _sentence;
+  std::string _humanReadableSentence;
+  LMMap _languageModels;
+  LanguageModel _sentenceLm;
 
-    std::map<std::string, float> _logProbs;
-    using PMapItemType = decltype(_logProbs)::value_type;
+  std::map<std::string, float> _logProbs;
+  using PMapItemType = decltype(_logProbs)::value_type;
 
-    int _idx;
+  int _idx;
 
-public:
-    explicit SentenceClassifier(int idx, 
-        std::string const &sentence,
-        std::string const &humanReadableSentence,
-        LMMap& languageModels);
+ public:
+  explicit SentenceClassifier(int idx,
+                              std::string const &sentence,
+                              std::string const &humanReadableSentence,
+                              LMMap &languageModels);
 
-    int process();
+  int printUniGramAnalysis(std::ofstream& output);
+  int printBiGramAnalysis(std::ofstream& output);
+  int process();
 
-private:
-    void dumpUnigram(char c, std::string const &language, std::ofstream &output);
+ private:
+  void dumpUnigram(char c, std::string const &language, std::ofstream &output);
+  void dumpBigram(char histChar, char currChar, std::string const &language, std::ofstream &output);
 };
 
 #endif

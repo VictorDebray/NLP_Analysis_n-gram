@@ -108,3 +108,9 @@ venv.bak/
 cmake-build-debug/
 
 \.vscode/
+
+out1\.txt
+
+out2\.txt
+
+sentences\.txt
