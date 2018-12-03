@@ -4,6 +4,7 @@
 
 #include <functional>
 #include <sstream>
+#include <iostream>
 #include <algorithm>
 #include "BiGram.hpp"
 
@@ -89,4 +90,30 @@ float BiGram::getFrequency(char histChar, char currChar) const {
   else
     histCharIdx = std::toupper(histChar) - 'A';
   return _smoothedFrequencies.at(currCharIdx).at(histCharIdx);
+}
+
+int BiGram::dumpSmoothedFrequencies(std::string const &filePath) {
+  std::ofstream output(filePath);
+  if (!output.is_open()) {
+    std::cerr << "Couldn't open dump file " << filePath << std::endl;
+    return EXIT_FAILURE;
+  }
+
+  char rowIdx = 'a';
+  char colIdx = rowIdx;
+  std::function<void (float)> dumpSmoothedFrequency = std::bind(
+    [&rowIdx, &colIdx](float item, std::ofstream &of) {
+      of << "P(" << rowIdx << "|" << colIdx << ") = " << item << std::endl;
+      ++rowIdx;
+    }, std::placeholders::_1, std::ref(output)
+  );
+
+  for (int i = 0; i < _smoothedFrequencies.size(); i++) {
+    std::for_each(_smoothedFrequencies.at(colIdx - 'a').begin(),
+                  _smoothedFrequencies.at(colIdx - 'a').end() - 1,
+                  dumpSmoothedFrequency);
+    ++colIdx;
+    rowIdx = 'a';
+  }
+
 }

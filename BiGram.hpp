@@ -26,6 +26,7 @@ class BiGram {
   void buildGram(std::string const &text);
   void computeSmoothedFrequencies(float delta);
   float getFrequency(char histChar, char currChar) const;
+  int dumpSmoothedFrequencies(std::string const &filePath);
 };
 
 #endif //COMP472_MINIPROJECT3_BIGRAM_HPP

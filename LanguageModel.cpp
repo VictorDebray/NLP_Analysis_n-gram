@@ -44,7 +44,7 @@ int LanguageModel::computeFrequencies() {
   _unigram.computeSmoothedFrequencies(_delta);
   _unigram.dumpSmoothedFrequencies("unigram" + _dumpPath);
   _bigram.computeSmoothedFrequencies(_delta);
-  _unigram.dumpSmoothedFrequencies("bigram" + _dumpPath);
+  _bigram.dumpSmoothedFrequencies("bigram" + _dumpPath);
   return 0;
 }
 
