@@ -124,7 +124,7 @@ void SentenceClassifier::dumpBigram(char histChar, char currChar, std::string co
     output << histChar;
   output << ") = "
          << prob
-         << "==> log prob of sentence so far: "
+         << " ==> log prob of sentence so far: "
          << _logProbs.at(language)
          << std::endl;
 }
