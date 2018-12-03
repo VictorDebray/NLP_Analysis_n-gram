@@ -21,10 +21,6 @@ class LanguageModel {
   std::string _dumpPath;
   std::string _sentence;
 
-  std::string _dumpPath;
-
-  std::string _sentence;
-
  public:
   /* Overload for multi-line files */
   LanguageModel(std::string const &textPath,

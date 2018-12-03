@@ -62,7 +62,7 @@ void SentenceClassifier::dumpUnigram(char c, std::string const &language, std::o
   _logProbs.at(language) += log(prob);
   std::string languageUpper;
   languageUpper.resize(language.size());
-  std::transform(language.begin(), language.end(),languageUpper.begin(), ::toupper);
+  std::transform(language.begin(), language.end(), languageUpper.begin(), ::toupper);
   
   output << languageUpper
       << ": P(" << c << ") = " 

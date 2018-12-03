@@ -5,7 +5,10 @@
 #include <iostream>
 #include "UniGram.hpp"
 
-UniGram::UniGram() : _charAppearance(26, 1), _count(0) {}
+UniGram::UniGram() :
+    _charAppearance(26, 1),
+    _smoothedFrequencies(26, 1),
+    _count(0) {}
 
 void UniGram::buildGram(std::string const &text) {
   size_t len = text.size();

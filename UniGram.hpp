@@ -12,8 +12,8 @@
 class UniGram {
  private:
   std::vector<int> _charAppearance;
-  size_t _count;
   std::vector<float> _smoothedFrequencies;
+  size_t _count;
 
  public:
   UniGram();
