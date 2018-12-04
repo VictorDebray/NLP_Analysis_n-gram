@@ -99,31 +99,12 @@ int BiGram::dumpSmoothedFrequencies(std::string const &filePath) {
     return EXIT_FAILURE;
   }
 
-  char rowIdx = 'a';
-  char colIdx = rowIdx;
-  std::function<void (float)> dumpSmoothedFrequency = std::bind(
-    [&rowIdx, &colIdx](float item, std::ofstream &of) {
-      // of << "P(" << rowIdx << "|" << colIdx << ") = " << item << std::endl;
-      of << "P(" << colIdx << "|" << rowIdx << ")," << item << std::endl;
-      ++rowIdx;
-    }, std::placeholders::_1, std::ref(output)
-  );
-
   for (int prevCharIdx = 0; prevCharIdx < _smoothedFrequencies.size(); prevCharIdx++) {
     for (int currCharIdx = 0; currCharIdx < _smoothedFrequencies.size(); currCharIdx++) {
       auto item = _smoothedFrequencies.at(currCharIdx).at(prevCharIdx);
       char currLetter = currCharIdx + 'a';
       char prevLetter = prevCharIdx + 'a';
-      output << "P(" << currLetter << "|" << prevLetter << ")," << item << std::endl;
+      output << "P(" << currLetter << "|" << prevLetter << ") = " << item << std::endl;
     }
   }  
-
-
-  //   std::for_each(_smoothedFrequencies.at(colIdx - 'a').begin(),
-  //                 _smoothedFrequencies.at(colIdx - 'a').end() - 1,
-  //                 dumpSmoothedFrequency);
-  //   ++colIdx;
-  //   rowIdx = 'a';
-  // }
-
 }

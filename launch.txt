@@ -1,0 +1,1 @@
+./COMP472_miniproject3 "./TrainingCorpusENandFRandEUS/en-the-little-prince.txt" "./TrainingCorpusENandFRandEUS/fr-le-petit-prince.txt" "./TrainingCorpusENandFRandEUS/eus-gosea_lagun_laguna.txt" "./input.txt"
