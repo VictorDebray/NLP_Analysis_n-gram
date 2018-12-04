@@ -1,0 +1,56 @@
+Egun on.
+UNIGRAM MODEL
+UNIGRAM: E
+FRENCH: P(E) = 0.169002==> log prob of sentence so far: -1.77784
+ENGLISH: P(E) = 0.124354==> log prob of sentence so far: -2.08463
+EUSKARA: P(E) = 0.121323==> log prob of sentence so far: -2.1093
+UNIGRAM: g
+FRENCH: P(g) = 0.0116455==> log prob of sentence so far: -6.23068
+ENGLISH: P(g) = 0.0226646==> log prob of sentence so far: -5.87158
+EUSKARA: P(g) = 0.0327964==> log prob of sentence so far: -5.52673
+UNIGRAM: u
+FRENCH: P(u) = 0.0608786==> log prob of sentence so far: -9.02955
+ENGLISH: P(u) = 0.0247329==> log prob of sentence so far: -9.5712
+EUSKARA: P(u) = 0.0517693==> log prob of sentence so far: -8.48769
+UNIGRAM: n
+FRENCH: P(n) = 0.0773528==> log prob of sentence so far: -11.5889
+ENGLISH: P(n) = 0.0693726==> log prob of sentence so far: -12.2395
+EUSKARA: P(n) = 0.0705391==> log prob of sentence so far: -11.1393
+UNIGRAM: o
+FRENCH: P(o) = 0.0586063==> log prob of sentence so far: -14.4258
+ENGLISH: P(o) = 0.0714409==> log prob of sentence so far: -14.8783
+EUSKARA: P(o) = 0.0594885==> log prob of sentence so far: -13.9613
+UNIGRAM: n
+FRENCH: P(n) = 0.0773528==> log prob of sentence so far: -16.9852
+ENGLISH: P(n) = 0.0693726==> log prob of sentence so far: -17.5466
+EUSKARA: P(n) = 0.0705391==> log prob of sentence so far: -16.6128
+
+According to the unigram model, the sentence is in euskara
+--------------------
+BIGRAM MODEL
+BIGRAM: <s>E
+FRENCH: P(E|<s>) = 0.0145044 ==> log prob of sentence so far: -21.2185
+ENGLISH: P(E|<s>) = 0.00415309 ==> log prob of sentence so far: -23.0305
+EUSKARA: P(E|<s>) = 0.0269237 ==> log prob of sentence so far: -20.2276
+BIGRAM: Eg
+FRENCH: P(g|E) = 0.00151272 ==> log prob of sentence so far: -27.7124
+ENGLISH: P(g|E) = 0.000407166 ==> log prob of sentence so far: -30.8368
+EUSKARA: P(g|E) = 0.00759593 ==> log prob of sentence so far: -25.1077
+BIGRAM: gu
+FRENCH: P(u|g) = 0.000444919 ==> log prob of sentence so far: -35.43
+ENGLISH: P(u|g) = 0.000570033 ==> log prob of sentence so far: -38.3066
+EUSKARA: P(u|g) = 0.00870556 ==> log prob of sentence so far: -29.8515
+BIGRAM: un
+FRENCH: P(n|u) = 0.00952127 ==> log prob of sentence so far: -40.0842
+ENGLISH: P(n|u) = 0.00285016 ==> log prob of sentence so far: -44.167
+EUSKARA: P(n|u) = 0.00739418 ==> log prob of sentence so far: -34.7586
+BIGRAM: no
+FRENCH: P(o|n) = 0.00133476 ==> log prob of sentence so far: -46.7032
+ENGLISH: P(o|n) = 0.00480456 ==> log prob of sentence so far: -49.5052
+EUSKARA: P(o|n) = 0.00364161 ==> log prob of sentence so far: -40.3739
+BIGRAM: on
+FRENCH: P(n|o) = 0.0185976 ==> log prob of sentence so far: -50.6879
+ENGLISH: P(n|o) = 0.010342 ==> log prob of sentence so far: -54.0767
+EUSKARA: P(n|o) = 0.00487229 ==> log prob of sentence so far: -45.6981
+
+According to the bigram model, the sentence is in euskara

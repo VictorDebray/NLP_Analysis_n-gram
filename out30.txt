@@ -1,0 +1,32 @@
+Non ?
+UNIGRAM MODEL
+UNIGRAM: N
+FRENCH: P(N) = 0.0773528==> log prob of sentence so far: -2.55938
+ENGLISH: P(N) = 0.0693726==> log prob of sentence so far: -2.66826
+EUSKARA: P(N) = 0.0705391==> log prob of sentence so far: -2.65159
+UNIGRAM: o
+FRENCH: P(o) = 0.0586063==> log prob of sentence so far: -5.39629
+ENGLISH: P(o) = 0.0714409==> log prob of sentence so far: -5.30715
+EUSKARA: P(o) = 0.0594885==> log prob of sentence so far: -5.47356
+UNIGRAM: n
+FRENCH: P(n) = 0.0773528==> log prob of sentence so far: -7.95567
+ENGLISH: P(n) = 0.0693726==> log prob of sentence so far: -7.97541
+EUSKARA: P(n) = 0.0705391==> log prob of sentence so far: -8.12515
+
+According to the unigram model, the sentence is in french
+--------------------
+BIGRAM MODEL
+BIGRAM: <s>N
+FRENCH: P(N|<s>) = 0.00685175 ==> log prob of sentence so far: -12.9389
+ENGLISH: P(N|<s>) = 0.00627036 ==> log prob of sentence so far: -13.0473
+EUSKARA: P(N|<s>) = 0.0055179 ==> log prob of sentence so far: -13.3249
+BIGRAM: No
+FRENCH: P(o|N) = 0.00133476 ==> log prob of sentence so far: -19.5579
+ENGLISH: P(o|N) = 0.00480456 ==> log prob of sentence so far: -18.3855
+EUSKARA: P(o|N) = 0.00364161 ==> log prob of sentence so far: -18.9402
+BIGRAM: on
+FRENCH: P(n|o) = 0.0185976 ==> log prob of sentence so far: -23.5426
+ENGLISH: P(n|o) = 0.010342 ==> log prob of sentence so far: -22.9571
+EUSKARA: P(n|o) = 0.00487229 ==> log prob of sentence so far: -24.2644
+
+According to the bigram model, the sentence is in english

@@ -1,0 +1,24 @@
+Go !
+UNIGRAM MODEL
+UNIGRAM: G
+FRENCH: P(G) = 0.0116455==> log prob of sentence so far: -4.45283
+ENGLISH: P(G) = 0.0226646==> log prob of sentence so far: -3.78695
+EUSKARA: P(G) = 0.0327964==> log prob of sentence so far: -3.41744
+UNIGRAM: o
+FRENCH: P(o) = 0.0586063==> log prob of sentence so far: -7.28975
+ENGLISH: P(o) = 0.0714409==> log prob of sentence so far: -6.42584
+EUSKARA: P(o) = 0.0594885==> log prob of sentence so far: -6.23941
+
+According to the unigram model, the sentence is in euskara
+--------------------
+BIGRAM MODEL
+BIGRAM: <s>G
+FRENCH: P(G|<s>) = 0.00418224 ==> log prob of sentence so far: -12.7667
+ENGLISH: P(G|<s>) = 0.00610749 ==> log prob of sentence so far: -11.5241
+EUSKARA: P(G|<s>) = 0.0146169 ==> log prob of sentence so far: -10.465
+BIGRAM: Go
+FRENCH: P(o|G) = 0.000444919 ==> log prob of sentence so far: -20.4843
+ENGLISH: P(o|G) = 0.000732899 ==> log prob of sentence so far: -18.7426
+EUSKARA: P(o|G) = 0.00721261 ==> log prob of sentence so far: -15.3969
+
+According to the bigram model, the sentence is in euskara

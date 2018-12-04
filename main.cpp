@@ -56,7 +56,7 @@ int main(int ac, char **av) {
   std::map<std::string, LanguageModel> lms = { 
     { "english", lm1 }, 
     { "french", lm2, },
-    { "other", lm3 },
+    { "euskara", lm3 },
   };
   return classifySentences(inputFile, lms);
 }

@@ -17,7 +17,7 @@ SentenceClassifier::SentenceClassifier(int idx,
   _logProbs = {
       {"french", 0},
       {"english", 0},
-      {"other", 0},
+      {"euskara", 0},
   };
   _sentenceLm.buildModel();
 }
@@ -30,7 +30,7 @@ int SentenceClassifier::printUniGramAnalysis(std::ofstream &output) {
 
     dumpUnigram(c, "french", std::ref(output));
     dumpUnigram(c, "english", std::ref(output));
-    dumpUnigram(c, "other", std::ref(output));
+    dumpUnigram(c, "euskara", std::ref(output));
   }
 
   auto max = std::max_element(_logProbs.begin(), _logProbs.end(),
@@ -53,7 +53,7 @@ int SentenceClassifier::printBiGramAnalysis(std::ofstream &output) {
   output << "BIGRAM: " << "<s>" << currChar << std::endl;
   dumpBigram(-1, currChar, "french", std::ref(output));
   dumpBigram(-1, currChar, "english", std::ref(output));
-  dumpBigram(-1, currChar, "other", std::ref(output));
+  dumpBigram(-1, currChar, "euskara", std::ref(output));
   for (int i = 1; i < _sentence.size(); i++) {
     char histChar = _sentence[i - 1];
     currChar = _sentence[i];
@@ -61,7 +61,7 @@ int SentenceClassifier::printBiGramAnalysis(std::ofstream &output) {
 
     dumpBigram(histChar, currChar, "french", std::ref(output));
     dumpBigram(histChar, currChar, "english", std::ref(output));
-    dumpBigram(histChar, currChar, "other", std::ref(output));
+    dumpBigram(histChar, currChar, "euskara", std::ref(output));
   }
 
   auto max = std::max_element(_logProbs.begin(), _logProbs.end(),

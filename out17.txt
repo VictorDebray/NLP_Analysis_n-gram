@@ -1,0 +1,208 @@
+Dantzatu nahi al duzu nirekin ?
+UNIGRAM MODEL
+UNIGRAM: D
+FRENCH: P(D) = 0.0391024==> log prob of sentence so far: -3.24157
+ENGLISH: P(D) = 0.0428301==> log prob of sentence so far: -3.15052
+EUSKARA: P(D) = 0.0328979==> log prob of sentence so far: -3.41435
+UNIGRAM: a
+FRENCH: P(a) = 0.0826548==> log prob of sentence so far: -5.73465
+ENGLISH: P(a) = 0.088504==> log prob of sentence so far: -5.57522
+EUSKARA: P(a) = 0.160488==> log prob of sentence so far: -5.24388
+UNIGRAM: n
+FRENCH: P(n) = 0.0773528==> log prob of sentence so far: -8.29403
+ENGLISH: P(n) = 0.0693726==> log prob of sentence so far: -8.24349
+EUSKARA: P(n) = 0.0705391==> log prob of sentence so far: -7.89547
+UNIGRAM: t
+FRENCH: P(t) = 0.0654232==> log prob of sentence so far: -11.0209
+ENGLISH: P(t) = 0.0903999==> log prob of sentence so far: -10.647
+EUSKARA: P(t) = 0.0750894==> log prob of sentence so far: -10.4845
+UNIGRAM: z
+FRENCH: P(z) = 0.00123083==> log prob of sentence so far: -17.721
+ENGLISH: P(z) = 0.00060324==> log prob of sentence so far: -18.0602
+EUSKARA: P(z) = 0.0423032==> log prob of sentence so far: -13.6474
+UNIGRAM: a
+FRENCH: P(a) = 0.0826548==> log prob of sentence so far: -20.2141
+ENGLISH: P(a) = 0.088504==> log prob of sentence so far: -20.4849
+EUSKARA: P(a) = 0.160488==> log prob of sentence so far: -15.477
+UNIGRAM: t
+FRENCH: P(t) = 0.0654232==> log prob of sentence so far: -22.9409
+ENGLISH: P(t) = 0.0903999==> log prob of sentence so far: -22.8884
+EUSKARA: P(t) = 0.0750894==> log prob of sentence so far: -18.0661
+UNIGRAM: u
+FRENCH: P(u) = 0.0608786==> log prob of sentence so far: -25.7398
+ENGLISH: P(u) = 0.0247329==> log prob of sentence so far: -26.588
+EUSKARA: P(u) = 0.0517693==> log prob of sentence so far: -21.027
+UNIGRAM: n
+FRENCH: P(n) = 0.0773528==> log prob of sentence so far: -28.2992
+ENGLISH: P(n) = 0.0693726==> log prob of sentence so far: -29.2563
+EUSKARA: P(n) = 0.0705391==> log prob of sentence so far: -23.6786
+UNIGRAM: a
+FRENCH: P(a) = 0.0826548==> log prob of sentence so far: -30.7923
+ENGLISH: P(a) = 0.088504==> log prob of sentence so far: -31.681
+EUSKARA: P(a) = 0.160488==> log prob of sentence so far: -25.5081
+UNIGRAM: h
+FRENCH: P(h) = 0.00880515==> log prob of sentence so far: -35.5247
+ENGLISH: P(h) = 0.0593761==> log prob of sentence so far: -34.5049
+EUSKARA: P(h) = 0.0168908==> log prob of sentence so far: -29.5891
+UNIGRAM: i
+FRENCH: P(i) = 0.0813293==> log prob of sentence so far: -38.0339
+ENGLISH: P(i) = 0.0766115==> log prob of sentence so far: -37.0739
+EUSKARA: P(i) = 0.0829101==> log prob of sentence so far: -32.0791
+UNIGRAM: a
+FRENCH: P(a) = 0.0826548==> log prob of sentence so far: -40.527
+ENGLISH: P(a) = 0.088504==> log prob of sentence so far: -39.4986
+EUSKARA: P(a) = 0.160488==> log prob of sentence so far: -33.9087
+UNIGRAM: l
+FRENCH: P(l) = 0.0428896==> log prob of sentence so far: -43.6762
+ENGLISH: P(l) = 0.0362806==> log prob of sentence so far: -42.8151
+EUSKARA: P(l) = 0.0293431==> log prob of sentence so far: -37.4374
+UNIGRAM: d
+FRENCH: P(d) = 0.0391024==> log prob of sentence so far: -46.9177
+ENGLISH: P(d) = 0.0428301==> log prob of sentence so far: -45.9656
+EUSKARA: P(d) = 0.0328979==> log prob of sentence so far: -40.8517
+UNIGRAM: u
+FRENCH: P(u) = 0.0608786==> log prob of sentence so far: -49.7166
+ENGLISH: P(u) = 0.0247329==> log prob of sentence so far: -49.6652
+EUSKARA: P(u) = 0.0517693==> log prob of sentence so far: -43.8127
+UNIGRAM: z
+FRENCH: P(z) = 0.00123083==> log prob of sentence so far: -56.4167
+ENGLISH: P(z) = 0.00060324==> log prob of sentence so far: -57.0784
+EUSKARA: P(z) = 0.0423032==> log prob of sentence so far: -46.9756
+UNIGRAM: u
+FRENCH: P(u) = 0.0608786==> log prob of sentence so far: -59.2155
+ENGLISH: P(u) = 0.0247329==> log prob of sentence so far: -60.778
+EUSKARA: P(u) = 0.0517693==> log prob of sentence so far: -49.9365
+UNIGRAM: n
+FRENCH: P(n) = 0.0773528==> log prob of sentence so far: -61.7749
+ENGLISH: P(n) = 0.0693726==> log prob of sentence so far: -63.4463
+EUSKARA: P(n) = 0.0705391==> log prob of sentence so far: -52.5881
+UNIGRAM: i
+FRENCH: P(i) = 0.0813293==> log prob of sentence so far: -64.2842
+ENGLISH: P(i) = 0.0766115==> log prob of sentence so far: -66.0153
+EUSKARA: P(i) = 0.0829101==> log prob of sentence so far: -55.0781
+UNIGRAM: r
+FRENCH: P(r) = 0.0614467==> log prob of sentence so far: -67.0738
+ENGLISH: P(r) = 0.0597208==> log prob of sentence so far: -68.8334
+EUSKARA: P(r) = 0.079985==> log prob of sentence so far: -57.604
+UNIGRAM: e
+FRENCH: P(e) = 0.169002==> log prob of sentence so far: -68.8516
+ENGLISH: P(e) = 0.124354==> log prob of sentence so far: -70.918
+EUSKARA: P(e) = 0.121323==> log prob of sentence so far: -59.7133
+UNIGRAM: k
+FRENCH: P(k) = 0.000284037==> log prob of sentence so far: -77.018
+ENGLISH: P(k) = 0.00749741==> log prob of sentence so far: -75.8112
+EUSKARA: P(k) = 0.0518099==> log prob of sentence so far: -62.6735
+UNIGRAM: i
+FRENCH: P(i) = 0.0813293==> log prob of sentence so far: -79.5273
+ENGLISH: P(i) = 0.0766115==> log prob of sentence so far: -78.3802
+EUSKARA: P(i) = 0.0829101==> log prob of sentence so far: -65.1635
+UNIGRAM: n
+FRENCH: P(n) = 0.0773528==> log prob of sentence so far: -82.0866
+ENGLISH: P(n) = 0.0693726==> log prob of sentence so far: -81.0485
+EUSKARA: P(n) = 0.0705391==> log prob of sentence so far: -67.8151
+
+According to the unigram model, the sentence is in euskara
+--------------------
+BIGRAM MODEL
+BIGRAM: <s>D
+FRENCH: P(D|<s>) = 0.0260723 ==> log prob of sentence so far: -85.7335
+ENGLISH: P(D|<s>) = 0.00936482 ==> log prob of sentence so far: -85.7193
+EUSKARA: P(D|<s>) = 0.0153835 ==> log prob of sentence so far: -71.9895
+BIGRAM: Da
+FRENCH: P(a|D) = 0.0032924 ==> log prob of sentence so far: -91.4497
+ENGLISH: P(a|D) = 0.000732899 ==> log prob of sentence so far: -92.9378
+EUSKARA: P(a|D) = 0.00818101 ==> log prob of sentence so far: -76.7955
+BIGRAM: an
+FRENCH: P(n|a) = 0.0104111 ==> log prob of sentence so far: -96.0145
+ENGLISH: P(n|a) = 0.0158795 ==> log prob of sentence so far: -97.0805
+EUSKARA: P(n|a) = 0.0172195 ==> log prob of sentence so far: -80.8572
+BIGRAM: nt
+FRENCH: P(t|n) = 0.011123 ==> log prob of sentence so far: -100.513
+ENGLISH: P(t|n) = 0.00513029 ==> log prob of sentence so far: -102.353
+EUSKARA: P(t|n) = 0.00622402 ==> log prob of sentence so far: -85.9365
+BIGRAM: tz
+FRENCH: P(z|t) = 0.000266951 ==> log prob of sentence so far: -108.742
+ENGLISH: P(z|t) = 0.0002443 ==> log prob of sentence so far: -110.67
+EUSKARA: P(z|t) = 0.0131239 ==> log prob of sentence so far: -90.2698
+BIGRAM: za
+FRENCH: P(a|z) = 0.000266951 ==> log prob of sentence so far: -116.97
+ENGLISH: P(a|z) = 0.0002443 ==> log prob of sentence so far: -118.987
+EUSKARA: P(a|z) = 0.00862486 ==> log prob of sentence so far: -95.0229
+BIGRAM: at
+FRENCH: P(t|a) = 0.00186866 ==> log prob of sentence so far: -123.253
+ENGLISH: P(t|a) = 0.0109935 ==> log prob of sentence so far: -123.498
+EUSKARA: P(t|a) = 0.0166949 ==> log prob of sentence so far: -99.1156
+BIGRAM: tu
+FRENCH: P(u|t) = 0.00169069 ==> log prob of sentence so far: -129.635
+ENGLISH: P(u|t) = 0.0017101 ==> log prob of sentence so far: -129.869
+EUSKARA: P(u|t) = 0.00916959 ==> log prob of sentence so far: -103.807
+BIGRAM: un
+FRENCH: P(n|u) = 0.00952127 ==> log prob of sentence so far: -134.29
+ENGLISH: P(n|u) = 0.00285016 ==> log prob of sentence so far: -135.729
+EUSKARA: P(n|u) = 0.00739418 ==> log prob of sentence so far: -108.715
+BIGRAM: na
+FRENCH: P(a|n) = 0.0027585 ==> log prob of sentence so far: -140.183
+ENGLISH: P(a|n) = 0.0012215 ==> log prob of sentence so far: -142.437
+EUSKARA: P(a|n) = 0.00983537 ==> log prob of sentence so far: -113.336
+BIGRAM: ah
+FRENCH: P(h|a) = 0.000444919 ==> log prob of sentence so far: -147.9
+ENGLISH: P(h|a) = 0.000407166 ==> log prob of sentence so far: -150.243
+EUSKARA: P(h|a) = 0.00160392 ==> log prob of sentence so far: -119.772
+BIGRAM: hi
+FRENCH: P(i|h) = 0.00169069 ==> log prob of sentence so far: -154.283
+ENGLISH: P(i|h) = 0.00855049 ==> log prob of sentence so far: -155.005
+EUSKARA: P(i|h) = 0.00241093 ==> log prob of sentence so far: -125.799
+BIGRAM: ia
+FRENCH: P(a|i) = 0.000266951 ==> log prob of sentence so far: -162.511
+ENGLISH: P(a|i) = 0.0002443 ==> log prob of sentence so far: -163.322
+EUSKARA: P(a|i) = 0.00812049 ==> log prob of sentence so far: -130.613
+BIGRAM: al
+FRENCH: P(l|a) = 0.00258053 ==> log prob of sentence so far: -168.471
+ENGLISH: P(l|a) = 0.00545603 ==> log prob of sentence so far: -168.533
+EUSKARA: P(l|a) = 0.00826171 ==> log prob of sentence so far: -135.409
+BIGRAM: ld
+FRENCH: P(d|l) = 0.000266951 ==> log prob of sentence so far: -176.699
+ENGLISH: P(d|l) = 0.00382736 ==> log prob of sentence so far: -174.099
+EUSKARA: P(d|l) = 0.0029153 ==> log prob of sentence so far: -141.247
+BIGRAM: du
+FRENCH: P(u|d) = 0.00293647 ==> log prob of sentence so far: -182.53
+ENGLISH: P(u|d) = 0.000570033 ==> log prob of sentence so far: -181.569
+EUSKARA: P(u|d) = 0.0068898 ==> log prob of sentence so far: -146.224
+BIGRAM: uz
+FRENCH: P(z|u) = 0.000266951 ==> log prob of sentence so far: -190.758
+ENGLISH: P(z|u) = 0.0002443 ==> log prob of sentence so far: -189.886
+EUSKARA: P(z|u) = 0.00350038 ==> log prob of sentence so far: -151.879
+BIGRAM: zu
+FRENCH: P(u|z) = 0.000266951 ==> log prob of sentence so far: -198.987
+ENGLISH: P(u|z) = 0.0002443 ==> log prob of sentence so far: -198.203
+EUSKARA: P(u|z) = 0.0029153 ==> log prob of sentence so far: -157.717
+BIGRAM: un
+FRENCH: P(n|u) = 0.00952127 ==> log prob of sentence so far: -203.641
+ENGLISH: P(n|u) = 0.00285016 ==> log prob of sentence so far: -204.063
+EUSKARA: P(n|u) = 0.00739418 ==> log prob of sentence so far: -162.624
+BIGRAM: ni
+FRENCH: P(i|n) = 0.00258053 ==> log prob of sentence so far: -209.601
+ENGLISH: P(i|n) = 0.00187296 ==> log prob of sentence so far: -210.343
+EUSKARA: P(i|n) = 0.00231005 ==> log prob of sentence so far: -168.695
+BIGRAM: ir
+FRENCH: P(r|i) = 0.00311443 ==> log prob of sentence so far: -215.373
+ENGLISH: P(r|i) = 0.0017101 ==> log prob of sentence so far: -216.715
+EUSKARA: P(r|i) = 0.00569947 ==> log prob of sentence so far: -173.862
+BIGRAM: re
+FRENCH: P(e|r) = 0.016284 ==> log prob of sentence so far: -219.49
+ENGLISH: P(e|r) = 0.012785 ==> log prob of sentence so far: -221.074
+EUSKARA: P(e|r) = 0.0179054 ==> log prob of sentence so far: -177.885
+BIGRAM: ek
+FRENCH: P(k|e) = 0.000266951 ==> log prob of sentence so far: -227.719
+ENGLISH: P(k|e) = 0.000407166 ==> log prob of sentence so far: -228.88
+EUSKARA: P(k|e) = 0.00862486 ==> log prob of sentence so far: -182.638
+BIGRAM: ki
+FRENCH: P(i|k) = 0.000266951 ==> log prob of sentence so far: -235.947
+ENGLISH: P(i|k) = 0.000895765 ==> log prob of sentence so far: -235.898
+EUSKARA: P(i|k) = 0.0060021 ==> log prob of sentence so far: -187.753
+BIGRAM: in
+FRENCH: P(n|i) = 0.00916533 ==> log prob of sentence so far: -240.639
+ENGLISH: P(n|i) = 0.0165309 ==> log prob of sentence so far: -240.001
+EUSKARA: P(n|i) = 0.0113687 ==> log prob of sentence so far: -192.23
+
+According to the bigram model, the sentence is in euskara

@@ -1,0 +1,32 @@
+Vas !
+UNIGRAM MODEL
+UNIGRAM: V
+FRENCH: P(V) = 0.0146753==> log prob of sentence so far: -4.22159
+ENGLISH: P(V) = 0.0112892==> log prob of sentence so far: -4.48391
+EUSKARA: P(V) = 0.000396116==> log prob of sentence so far: -7.8338
+UNIGRAM: a
+FRENCH: P(a) = 0.0826548==> log prob of sentence so far: -6.71468
+ENGLISH: P(a) = 0.088504==> log prob of sentence so far: -6.90862
+EUSKARA: P(a) = 0.160488==> log prob of sentence so far: -9.66334
+UNIGRAM: s
+FRENCH: P(s) = 0.0813293==> log prob of sentence so far: -9.22392
+ENGLISH: P(s) = 0.0609273==> log prob of sentence so far: -9.70669
+EUSKARA: P(s) = 0.026296==> log prob of sentence so far: -13.3017
+
+According to the unigram model, the sentence is in french
+--------------------
+BIGRAM MODEL
+BIGRAM: <s>V
+FRENCH: P(V|<s>) = 0.00525004 ==> log prob of sentence so far: -14.4734
+ENGLISH: P(V|<s>) = 0.0021987 ==> log prob of sentence so far: -15.8266
+EUSKARA: P(V|<s>) = 0.000191664 ==> log prob of sentence so far: -21.8614
+BIGRAM: Va
+FRENCH: P(a|V) = 0.00347037 ==> log prob of sentence so far: -20.1369
+ENGLISH: P(a|V) = 0.000732899 ==> log prob of sentence so far: -23.0451
+EUSKARA: P(a|V) = 0.000110963 ==> log prob of sentence so far: -30.9678
+BIGRAM: as
+FRENCH: P(s|a) = 0.00311443 ==> log prob of sentence so far: -25.9086
+ENGLISH: P(s|a) = 0.00855049 ==> log prob of sentence so far: -27.8068
+EUSKARA: P(s|a) = 0.00483194 ==> log prob of sentence so far: -36.3003
+
+According to the bigram model, the sentence is in french

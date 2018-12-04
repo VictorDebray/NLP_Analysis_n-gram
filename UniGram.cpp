@@ -50,7 +50,8 @@ int UniGram::dumpSmoothedFrequencies(std::string const &filePath) {
   char idx = 'a';
   std::function<void(float)> dumpSmoothedFrequency = std::bind(
       [&idx](float item, std::ofstream &of) {
-        of << "P(" << idx << ") = " << item << std::endl;
+        // of << "P(" << idx << ") = " << item << std::endl;
+        of << "P(" << idx << ")," << item << std::endl;
         ++idx;
       }, std::placeholders::_1, std::ref(output)
   );

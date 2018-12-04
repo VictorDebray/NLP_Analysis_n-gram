@@ -3,38 +3,38 @@ UNIGRAM MODEL
 UNIGRAM: I
 FRENCH: P(I) = 0.0813293==> log prob of sentence so far: -2.50925
 ENGLISH: P(I) = 0.0766115==> log prob of sentence so far: -2.56901
-OTHER: P(I) = 0.0687359==> log prob of sentence so far: -2.67748
+EUSKARA: P(I) = 0.0829101==> log prob of sentence so far: -2.49
 UNIGRAM: m
 FRENCH: P(m) = 0.0355046==> log prob of sentence so far: -5.84734
 ENGLISH: P(m) = 0.0300758==> log prob of sentence so far: -6.07304
-OTHER: P(m) = 0.0244526==> log prob of sentence so far: -6.3885
+EUSKARA: P(m) = 0.0108983==> log prob of sentence so far: -7.00915
 UNIGRAM: O
 FRENCH: P(O) = 0.0586063==> log prob of sentence so far: -8.68425
 ENGLISH: P(O) = 0.0714409==> log prob of sentence so far: -8.71193
-OTHER: P(O) = 0.0728242==> log prob of sentence so far: -9.00821
+EUSKARA: P(O) = 0.0594885==> log prob of sentence so far: -9.83112
 UNIGRAM: K
 FRENCH: P(K) = 0.000284037==> log prob of sentence so far: -16.8507
 ENGLISH: P(K) = 0.00749741==> log prob of sentence so far: -13.6051
-OTHER: P(K) = 0.00846705==> log prob of sentence so far: -13.7798
+EUSKARA: P(K) = 0.0518099==> log prob of sentence so far: -12.7913
 
-According to the unigram model, the sentence is in english
+According to the unigram model, the sentence is in euskara
 --------------------
 BIGRAM MODEL
 BIGRAM: <s>I
-FRENCH: P(I|<s>) = 0.0040712==> log prob of sentence so far: -22.3545
-ENGLISH: P(I|<s>) = 0.0276629==> log prob of sentence so far: -17.1928
-OTHER: P(I|<s>) = 0.0152392==> log prob of sentence so far: -17.9637
+FRENCH: P(I|<s>) = 0.0038263 ==> log prob of sentence so far: -22.4165
+ENGLISH: P(I|<s>) = 0.0261401 ==> log prob of sentence so far: -17.2494
+EUSKARA: P(I|<s>) = 0.00737401 ==> log prob of sentence so far: -17.7011
 BIGRAM: Im
-FRENCH: P(m|I) = 0.00160954==> log prob of sentence so far: -28.7863
-ENGLISH: P(m|I) = 0.00318856==> log prob of sentence so far: -22.941
-OTHER: P(m|I) = 0.00297537==> log prob of sentence so far: -23.7811
+FRENCH: P(m|I) = 0.00151272 ==> log prob of sentence so far: -28.9104
+ENGLISH: P(m|I) = 0.00301303 ==> log prob of sentence so far: -23.0542
+EUSKARA: P(m|I) = 0.000655691 ==> log prob of sentence so far: -25.0309
 BIGRAM: mO
-FRENCH: P(O|m) = 0.0106987==> log prob of sentence so far: -33.3239
-ENGLISH: P(O|m) = 0.00163737==> log prob of sentence so far: -29.3556
-OTHER: P(O|m) = 0.00306885==> log prob of sentence so far: -29.5675
+FRENCH: P(O|m) = 0.0100552 ==> log prob of sentence so far: -33.51
+ENGLISH: P(O|m) = 0.00154723 ==> log prob of sentence so far: -29.5255
+EUSKARA: P(O|m) = 0.00140217 ==> log prob of sentence so far: -31.6006
 BIGRAM: OK
-FRENCH: P(K|O) = 0.000284037==> log prob of sentence so far: -41.4903
-ENGLISH: P(K|O) = 0.00232678==> log prob of sentence so far: -35.4189
-OTHER: P(K|O) = 0.000952222==> log prob of sentence so far: -36.5242
+FRENCH: P(K|O) = 0.000266951 ==> log prob of sentence so far: -41.7385
+ENGLISH: P(K|O) = 0.0021987 ==> log prob of sentence so far: -35.6454
+EUSKARA: P(K|O) = 0.00269338 ==> log prob of sentence so far: -37.5176
 
 According to the bigram model, the sentence is in english

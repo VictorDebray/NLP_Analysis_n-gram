@@ -8,3 +8,23 @@ Woody Allen parle.
 Est-ce que l'arbitre est la ?
 Cette phrase est en anglais.
 J'aime l'IA.
+Vas !
+Ondo, eskerrik asko.
+Pleased to meet you !
+Pozten naiz zu ezagutzeaz !
+Cette phrase contient vraiment beaucoup de lettres, afin de verifier que la longueur a une influence sur la classification.
+This sentence has a lot of letters because we want to verify that the length has an influence on the classification.
+Dantzatu nahi al duzu nirekin ?
+Zorionak eta urte berri on.
+L'Iphone est casse.
+My Motorola is broken.
+Fais le.
+Egun on.
+On egin !
+Le repas est servi.
+Dinner is ready.
+Welcome Jean Baptiste !
+Bienvenue William !
+Just do it.
+Go !
+Non ?
