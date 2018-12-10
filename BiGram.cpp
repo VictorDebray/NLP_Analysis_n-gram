@@ -106,5 +106,6 @@ int BiGram::dumpSmoothedFrequencies(std::string const &filePath) {
       char prevLetter = prevCharIdx + 'a';
       output << "P(" << currLetter << "|" << prevLetter << ") = " << item << std::endl;
     }
-  }  
+  }
+  return 0;
 }

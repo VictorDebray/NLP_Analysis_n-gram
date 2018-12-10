@@ -30,21 +30,19 @@ int classifySentences(std::string const &file, LMMap& lms) {
 
 int main(int ac, char **av) {
   if (ac != 5) {
-    std::cerr << "Input 4 files : training texts for each language and an file containing the sentences to be classified" << std::endl;
+    std::cerr << "Input 4 files : training texts for each language (in order: english, french, euskara) and an file containing the sentences to be classified" << std::endl;
     return EXIT_FAILURE;
   }
   std::string textPath1(av[1]);
   std::string textPath2(av[2]);
   std::string textPath3(av[3]);
   auto lm1 = LanguageModel(textPath1, "EN.txt");
-  if (lm1.buildModel())
-    std::cerr << "Cant open file";
   auto lm2 = LanguageModel(textPath2,"FR.txt");
-  if (lm2.buildModel())
-    std::cerr << "Cant open file";
   auto lm3 = LanguageModel(textPath3, "OT.txt");
-  if (lm3.buildModel())
+  if (lm1.buildModel() || lm2.buildModel() || lm3.buildModel()) {
     std::cerr << "Cant open file";
+    return EXIT_FAILURE;
+  }
   std::cout << "Model parsed" << std::endl;
 
   lm1.computeFrequencies();
